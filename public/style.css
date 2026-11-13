@@ -1,0 +1,66 @@
+/* style.css — dark minimalist gate */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+
+:root{
+  --bg:#0a0a0b;
+  --surface:#141416;
+  --border:#232328;
+  --text:#e4e4e7;
+  --muted:#71717a;
+  --accent:#6366f1;
+  --accent-h:#818cf8;
+}
+
+html,body{
+  height:100%;
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ---- Gate ---- */
+.gate{
+  display:flex;align-items:center;justify-content:center;
+  min-height:100vh;padding:1rem;
+}
+.gate-card{
+  text-align:center;max-width:420px;
+  padding:3rem 2rem;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:16px;
+}
+.gate-icon{color:var(--accent);margin-bottom:1.5rem}
+.gate-card h1{font-size:1.5rem;font-weight:600;margin-bottom:.75rem}
+.gate-desc{color:var(--muted);font-size:.95rem;line-height:1.6;margin-bottom:2rem}
+
+/* ---- Button ---- */
+.btn-primary{
+  display:inline-block;padding:.85rem 2.5rem;
+  font-size:1rem;font-weight:500;color:#fff;
+  background:var(--accent);border:none;border-radius:10px;
+  cursor:pointer;transition:background .2s,transform .1s;
+}
+.btn-primary:hover{background:var(--accent-h)}
+.btn-primary:active{transform:scale(.98)}
+.btn-primary:disabled{opacity:.6;cursor:not-allowed}
+
+/* ---- Footer ---- */
+.gate-footer{margin-top:1.5rem;font-size:.75rem;color:var(--muted)}
+
+/* ---- Content placeholder (post-click) ---- */
+.content-placeholder{
+  text-align:center;padding:4rem 2rem;color:var(--muted);
+}
+.content-placeholder h2{font-size:1.25rem;color:var(--text);margin:1rem 0 .5rem}
+.content-placeholder p{font-size:.9rem}
+.content-placeholder svg{color:var(--muted)}
+
+/* ---- Spinner ---- */
+.spinner{
+  width:40px;height:40px;margin:0 auto 1.5rem;
+  border:3px solid var(--border);border-top-color:var(--accent);
+  border-radius:50%;animation:spin .8s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
